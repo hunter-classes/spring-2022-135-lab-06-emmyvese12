@@ -2,6 +2,7 @@
 #include "doctest.h"
 #include "funcs.h"
 #include "caesar.h"
+#include "vigenere.h"
 
 // add your tests here
 
@@ -25,6 +26,18 @@ TEST_CASE("Caesar Cipher Encryption"){
     CHECK(encryptCaesar("i NeEd CoFfeE!!!", 9) == "r WnNm LxOonN!!!");
 }
 
+TEST_CASE("Vigenere Cipher Encryption using Lowercase Keys"){
+    CHECK(encryptVigenere("Hello there!", "cake") == "Jevpq trite!");
+    CHECK(encryptVigenere("The library closes at 7PM", "jedi") == "Clh trfuiac ftxwha jx 7SU");
+    CHECK(encryptVigenere("the iced coffee is at the HOUSE.", "santa") == "lhr bcwd phfxer bs st gae ZOHLE.");
+}
+
+TEST_CASE("Vigenere Cipher Encryption using Uppercase Keys"){
+    CHECK(encryptVigenere("Hello there!", "CAKE") == "Keyword must be lowercase!");
+    CHECK(encryptVigenere("we will meet YoU in London", "fLOor") == "Keyword must be lowercase!");
+    CHECK(encryptVigenere("the documents are ready.", "opeN") == "Keyword must be lowercase!");
+
+}
 
 
 
