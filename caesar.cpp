@@ -2,6 +2,7 @@
 #include <iostream>
 #include <cctype>
 #include "caesar.h"
+#include "funcs.h"
 
 //helper function to shift one character by rshift
 
