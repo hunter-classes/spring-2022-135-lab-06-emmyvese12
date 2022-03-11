@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 //task B
 char shiftChar(char c, int rshift);
