@@ -2,38 +2,9 @@
 #include <string>
 #include <cctype>
 #include "vigenere.h"
+#include "funcs.h" //for shiftChar2
 
-#include <array>
-
-char shiftChar2(char c, int rshift){
-
-    int alphaSize = 26;
-    int convert;
-    //uppercase letters ['A', 'Z']
-
-    if (isalpha(c) == true){
-
-        if (c >= 'A' && c <= 'Z'){
-            //convert the letter to a ascii label
-            convert = (c - int('A'));
-            c = (convert + rshift + alphaSize) % alphaSize + int('A');
-
-        }
-        //lowercase letters ['a', 'z']
-        if (c >= 'a' && c <= 'z'){
-            //convert to label
-            convert = (c - int('a'));
-            c = (convert + rshift + alphaSize) % alphaSize + int('a');
-        }
-    }
-
-    char result = char(c);
-  return result;
-}
-
-
-std::string encryptVigenere(std::string plaintext, std::string keyword)
-{
+std::string encryptVigenere(std::string plaintext, std::string keyword){
 std::string resultStr = "";
 
 int key_index = 0; // index for the keyword
@@ -64,7 +35,6 @@ for (int i = 0; i < plaintext.length(); i++){
         char newChar = shiftChar2(plaintext[i], rshift);
         resultStr += newChar;
         
-
     }
 
     else { //if it's not a letter, append the character itself
