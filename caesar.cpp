@@ -8,7 +8,7 @@
 
 char shiftChar(char c, int rshift){
     for (int i = 1; i <= rshift; i++){
-        if (isalpha(c) == true){ //check if the character is a letter first
+        if (isalpha(c)){ //check if the character is a letter first
             if (c == 'z' || c == 'Z'){
                 if (c == 'z'){
                     c = 'a';

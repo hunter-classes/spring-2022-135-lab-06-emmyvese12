@@ -14,7 +14,7 @@ int key_len = keyword.length();
 for (int i = 0; i < plaintext.length(); i++){
     char c = plaintext[i];
 
-    if (isupper(keyword[key_index]) == true){
+    if (isupper(keyword[key_index])){
             return "Keyword must be lowercase!";
             break;
         }

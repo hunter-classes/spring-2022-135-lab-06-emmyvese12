@@ -11,7 +11,7 @@ std::string decryptCaesar(std::string ciphertext, int rshift){ // ==plaintext
     for (int i = 0; i < size; i++){
         char c = ciphertext[i];
         char newChar; //this will hold the plain letter
-        if (isalpha(c) == true){
+        if (isalpha(c)){
             //if the character is a letter, call the shiftChar function to get it's plain letter
 
             newChar = shiftChar2(c, -rshift); //negative shift, going backwards
@@ -38,12 +38,12 @@ std::string decryptVigenere(std::string ciphertext, std::string keyword){
     for (int i = 0; i < size; i++){
         char c = ciphertext[i];
 
-        if (isupper(keyword[key_index]) == true){
+        if (isupper(keyword[key_index])){
             return "Keyword must be lowercase!";
             break;
         }
 
-        if (isalpha(c) == true){
+        if (isalpha(c)){
              int rshift = keyword[key_index] - 'a';
              rshift = -rshift; //shifting the other way to get to the plaintext
             key_index = (key_index + 1) % key_len;

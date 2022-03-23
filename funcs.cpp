@@ -10,7 +10,7 @@ char shiftChar2(char c, int rshift){
     int convert;
     //uppercase letters ['A', 'Z']
 
-    if (isalpha(c) == true){
+    if (isalpha(c)){
 
         if (c >= 'A' && c <= 'Z'){
             //convert the letter to a ascii label
